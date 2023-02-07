@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html manifest="todo.appcache">
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Should I Wear Shorts Today?</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
 <div id="navbar">
-	<img  src="/res/plus.png" alt="+" id="plus">
+	<img  src="/res/plus.png" alt="+" id="plus" class="navbar-left">
 	<div id="city-bar">
 	<div id="city-name">City Name</div>
 	<div id="city-indicator">x</div>
 	</div>
 	<img  src="/res/settings-dots-vertical.png" alt="settings" id="settings-dots">
 </div>
-<div id="mannequin">
+<div id="dressedmannequin">
+	<img src="/res/mannequin.png" id="mannequin">
 </div>
 <!--part of the slider code by: https://medium.com/@predragdavidovic10/native-dual-range-slider-html-css-javascript-91e778134816   !-->
 
@@ -32,5 +33,6 @@
 	</div>
 </div>
 <script src="js/slider.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

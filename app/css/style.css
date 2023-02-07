@@ -7,6 +7,15 @@
 	margin-right: 10px;
 	float: left;
 }
+.navbar-left{
+	width: 28px;
+	height: auto;
+	display: inline-block;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	float: left;
+}
 #settings-dots{
 	height: 28px;
 	width: auto;
@@ -29,6 +38,15 @@
 }
 #navbar{
 	text-align: center;
+}
+#dressedmannequin{
+	text-align: center;
+	margin-bottom: 30%;
+	margin-top: 20%;
+}
+#mannequin{
+	width: auto;
+	height: auto;
 }
 
 
