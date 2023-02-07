@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html manifest="todo.appcache">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Should I Wear Shorts Today?</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="navbar">
+	<img  src="/res/plus.png" alt="+" id="plus">
+	<div id="city-bar">
+	<div id="city-name">City Name</div>
+	<div id="city-indicator">x</div>
+	</div>
+	<img  src="/res/settings-dots-vertical.png" alt="settings" id="settings-dots">
+</div>
+<div id="mannequin">
+</div>
+<!--part of the slider code by: https://medium.com/@predragdavidovic10/native-dual-range-slider-html-css-javascript-91e778134816   !-->
+
+<div id="slider">
+	<div id="time">
+		<div id="time-start" value="9">12am</div> -    
+		<div id="time-end" value="22">12pm</div>  
+    </div>
+	<div class="range_container">
+    	<div class="sliders_control">
+       	 	<input id="fromSlider" type="range" value="10" min="0" max="24"/>
+       	 	<input id="toSlider" type="range" value="22" min="0" max="24"/>
+    	</div>
+	</div>
+</div>
+<script src="js/slider.js"></script>
+</body>
+</html>
