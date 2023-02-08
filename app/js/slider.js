@@ -67,10 +67,23 @@ function setToggleAccessible(currentTarget) {
   }
 }
 
+function getTimeEnd(){return timeEnd.value;}
+function getTimeStart(){return timeStart.value;}
+
+function setDefault(fromSlider, toSlider, timeStart, timeEnd) {
+  const start = parseInt(getDefaultStart());
+  const end = parseInt(getDefaultEnd());
+  fromSlider.value = start;
+  toSlider.value = end;
+  changeTimeWindow(start, timeStart);
+  changeTimeWindow(end, timeEnd);
+}
+
 const fromSlider = document.querySelector('#fromSlider');
 const toSlider = document.querySelector('#toSlider');
-const timeStart = document.querySelector('#time-start')
-const timeEnd = document.querySelector('#time-end')
+const timeStart = document.querySelector('#time-start');
+const timeEnd = document.querySelector('#time-end');
+setDefault(fromSlider, toSlider, timeStart, timeEnd);
 fillSlider(fromSlider, toSlider, '#C6C6C6', '#25daa5', toSlider);
 setToggleAccessible(toSlider);
 
