@@ -43,12 +43,61 @@
 	text-align: center;
 	margin-bottom: 30%;
 	margin-top: 20%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	width: 150px;
 }
 #mannequin{
 	width: auto;
 	height: auto;
+	position: relative;
 }
-
+.clothing{
+	position: absolute;
+}
+#hat{
+	top:-20px;
+	left: 44px;
+	visibility: hidden;
+}
+#tshirt{
+	top:71px;
+	left:4px;
+	visibility: hidden;
+}
+#winter-jacket{
+	top:60px;
+	left:4px;
+	visibility: hidden;
+}
+#hoodie{
+	top:60px;
+	left:4px;
+	visibility: hidden;
+}
+#trousers{
+	top:200px;
+	left:36px;
+	visibility: hidden;
+}
+#shorts{
+	top:204px;
+	left:36px;
+	visibility: hidden;
+}
+#scarf{
+	top: 54px;
+	left: 40px;
+	z-index: 1;
+	visibility: hidden;
+}
+#umbrella{
+	top: 215px;
+	left: 123px;
+	z-index: 1;
+	visibility: hidden;
+}
 
 .range_container {
   display: flex;
