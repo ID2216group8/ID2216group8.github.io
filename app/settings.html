@@ -5,12 +5,62 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Should I Wear Shorts Today?</title>
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/pop.css">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
 </head>
 <body>
 <div id="navbar">
 	<img  src="/res/close.png" alt="+" id="close" class="navbar-left">
+	<div id="city-name"><font size="6">Settings</font></div>
+</div>
+<div id="dressedmannequin" class="list-group">
+	<button id="div_add_time" class="list-group-item"><font size="6">Default Time</font></button>
+	<button id="div_add_unit" class="list-group-item"><font size="6">Temperature Unit</font></button>
+</div>
+<div class="col-md-5  col-xs-5 leftpage">
+	<form id="adduse_time">
+		<p class="addusep">Default Time Setting</p>
+		<div class="">
+
+			<p>
+				Begin Time: <input type="text" placeholder="Input begin time(0-24)" />
+			</p>
+			<p>
+				End Time: <input type="text" placeholder="Input end time(0-24)" />
+			</p>
+			<p>
+				Set the display time period when the app is opened.
+			</p>
+
+			<input type="button" value="cancel" id="cancle" /> <input type="button" value="OK" id="save" />
+		</div>
+
+	</form>
 </div>
 
+<div class="col-md-5  col-xs-5 leftpage">
+	<form id="adduse_unit">
+		<p class="addusep">Temperature Unit</p>
+		<div class="">
+
+			<p>Select Temperature Unit</p>
+			<p>
+				<input type="radio" />F(Fahrenheit)
+			</p>
+			<p>
+				<input type="radio" />C(Celsius)
+			</p>
+			<p>
+				<input type="radio" />K(Kelvin temperature)
+			</p>
+
+			<input type="button" value="cancel" id="cancle2" /> <input type="button" value="OK" id="save2" />
+		</div>
+	</form>
+</div>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/settings.js"></script>
 </body>
 </html>
