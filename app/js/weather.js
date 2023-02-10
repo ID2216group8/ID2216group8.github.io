@@ -1,7 +1,7 @@
 const hat = document.querySelector('#hat');
 const scarf = document.querySelector('#scarf');
 const winterJacket = document.querySelector('#winter-jacket');
-const longTrousers = document.querySelector('#trousers');
+const trousers = document.querySelector('#trousers');
 const hoodie = document.querySelector('#hoodie');
 const tShirt = document.querySelector('#tshirt');
 const shorts = document.querySelector('#shorts');
@@ -10,7 +10,7 @@ function setClothingToInvisible(){
 	hat.style.visibility = "hidden";
 	scarf.style.visibility = "hidden";
 	winterJacket.style.visibility = "hidden";
-	longTrousers.style.visibility = "hidden";
+	trousers.style.visibility = "hidden";
 	hoodie.style.visibility = "hidden";
 	tShirt.style.visibility = "hidden";
 	shorts.style.visibility = "hidden";
@@ -20,22 +20,22 @@ function setClothingToFreezing(){
 	hat.style.visibility = "visible";
 	scarf.style.visibility = "visible";
 	winterJacket.style.visibility = "visible";
-	longTrousers.style.visibility = "visible";
+	trousers.style.visibility = "visible";
 }
 function setClothingToCold(){
 	setClothingToInvisible();
 	winterJacket.style.visibility = "visible";
-	longTrousers.style.visibility = "visible";
+	trousers.style.visibility = "visible";
 }
 function setClothingToComfortable(){
 	setClothingToInvisible();
-	longTrousers.style.visibility = "visible";
+	trousers.style.visibility = "visible";
 	hoodie.style.visibility = "visible";
 }
 function setClothingToWarm(){
 	setClothingToInvisible();
 	tShirt.style.visibility = "visible";
-	longTrousers.style.visibility = "visible";
+	trousers.style.visibility = "visible";
 }
 function setClothingToHot(){
 	setClothingToInvisible();

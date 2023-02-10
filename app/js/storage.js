@@ -7,6 +7,16 @@ var cold = "10";
 var comfortable = "15";
 var warm = "23";
 var tempUnit = "C";
+var clothing ={
+	hat: "/res/hat.png",
+	hoodie:"/res/hoodie.png",
+	scarf:"/res/scarf.png",
+	shorts:"/res/shorts.png",
+	trousers:"/res/trousers.png",
+	tshirt:"/res/tshirt.png",
+	umbrella:"/res/umbrella.png",
+	winterJacket:"/res/winter-jacket.png",
+}
 
 function getValues(){
 	if(window.localStorage.getItem("defaultStart") == null)
@@ -25,6 +35,8 @@ function getValues(){
 		window.localStorage.setItem("warm", warm);
 	if(window.localStorage.getItem("tempUnit")== null)
 		window.localStorage.setItem("tempUnit", tempUnit);
+	if(window.localStorage.getItem("clothing") == null)
+		window.localStorage.setItem("clothing", JSON.stringify(clothing));
 
 	defaultStart = window.localStorage.getItem("defaultStart");
 	defaultEnd = window.localStorage.getItem("defaultEnd");
@@ -35,7 +47,31 @@ function getValues(){
 	comfortable = window.localStorage.getItem("comfortable");
 	warm = window.localStorage.getItem("warm");
 
+	tempUnit = window.localStorage.getItem("tempUnit");
+
+	clothing = JSON.parse(window.localStorage.getItem("clothing"));
+	updateClothing();
+
 	currentCity = cities[0];
+}
+
+function updateClothing(){
+	document.getElementById("hat-img").src = clothing['hat'];
+	document.getElementById("hoodie-img").src = clothing['hoodie'];
+	document.getElementById("scarf-img").src = clothing['scarf'];
+	document.getElementById("shorts-img").src = clothing['shorts'];
+	document.getElementById("trousers-img").src = clothing['trousers'];
+	document.getElementById("tshirt-img").src = clothing['tshirt'];
+	document.getElementById("umbrella-img").src = clothing['umbrella'];
+	document.getElementById("winter-jacket-img").src = clothing['winterJacket'];
+}
+
+function setClothing(typeOfClothe, src){
+	if(typeOfClothe === "winterJacket")
+		typeOfClothe = "winter-jacket";
+	document.getElementById(typeOfClothe + "-img").src = src;
+	clothing[typeOfClothe] = src;
+	window.localStorage.setItem("clothing", JSON.stringify(clothing));
 }
 function updateNavbar(cityName, dots){
 	cityName.innerHTML = currentCity;
