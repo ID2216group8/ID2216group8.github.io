@@ -81,6 +81,22 @@ function changeCityOrder(city1, city2){
 	window.localStorage.setItem("cities", cities.toString());
 }
 
+function tempInKelvin(temp){
+	if(temp instanceof String){
+		const t = parseInt(temp);
+		return t + 273.15;
+	}
+	return temp + 273.15;
+}
+
+function tempInFahrenheit(temp){
+	if(temp instanceof String){
+		const t = parseInt(temp);
+		return (t * 1.8)+32;
+	}
+	return (temp * 1.8)+32;
+}
+
 function setDefaultStart(start) {
 	defaultStart = start.toString;
 	window.localStorage.setItem("defaultStart", defaultStart);
