@@ -6,6 +6,7 @@ var freezing = "0";
 var cold = "10";
 var comfortable = "15";
 var warm = "23";
+var tempUnit = "C";
 
 function getValues(){
 	if(window.localStorage.getItem("defaultStart") == null)
@@ -22,6 +23,8 @@ function getValues(){
 		window.localStorage.setItem("comfortable", comfortable);
 	if(window.localStorage.getItem("warm")== null)
 		window.localStorage.setItem("warm", warm);
+	if(window.localStorage.getItem("tempUnit")== null)
+		window.localStorage.setItem("tempUnit", tempUnit);
 
 	defaultStart = window.localStorage.getItem("defaultStart");
 	defaultEnd = window.localStorage.getItem("defaultEnd");
@@ -57,6 +60,7 @@ function getFreezing(){return freezing;}
 function getCold(){return cold;}
 function getComfortable(){return comfortable;}
 function getWarm(){return warm;}
+function getTempUnit(){return tempUnit;}
 
 function addCity(cityName){
 	cities.push(cityName);
@@ -69,6 +73,13 @@ function deleteCity(cityName){
 	window.localStorage.setItem("cities", cities.toString());
 	updateNavbar(cityName, cityIndicatior);
 }
+function changeCityOrder(city1, city2){
+	const city1index = cities.indexOf(city1);
+	const city2index = cities.indexOf(city2);
+	cities[city1index] = city2;
+	cities[city2index] = city1;
+	window.localStorage.setItem("cities", cities.toString());
+}
 
 function setDefaultStart(start) {
 	defaultStart = start.toString;
@@ -78,7 +89,10 @@ function setDefaultStart(end) {
 	defaultEnd = end.toString;
 	window.localStorage.setItem("defaultEnd", defaultEnd);
 }
-
+function setTempUnit(unit){
+	tempUnit = unit;
+	window.localStorage.setItem("tempUnit", tempUnit);
+}
 function swipeLeft(){
 	const currentCityIndex = cities.indexOf(currentCity);
 	currentCity = cities[(currentCityIndex - 1 + cities.length) % cities.length];
