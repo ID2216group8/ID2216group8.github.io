@@ -58,6 +58,18 @@ function getCold(){return cold;}
 function getComfortable(){return comfortable;}
 function getWarm(){return warm;}
 
+function addCity(cityName){
+	cities.push(cityName);
+	window.localStorage.setItem("cities", cities.toString());
+	updateNavbar(cityName, cityIndicatior);
+}
+function deleteCity(cityName){
+	const index = cities.indexOf(cityName);
+	cities.splice(index, index);
+	window.localStorage.setItem("cities", cities.toString());
+	updateNavbar(cityName, cityIndicatior);
+}
+
 function swipeLeft(){
 	const currentCityIndex = cities.indexOf(currentCity);
 	currentCity = cities[(currentCityIndex - 1 + cities.length) % cities.length];
