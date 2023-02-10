@@ -70,6 +70,15 @@ function deleteCity(cityName){
 	updateNavbar(cityName, cityIndicatior);
 }
 
+function setDefaultStart(start) {
+	defaultStart = start.toString;
+	window.localStorage.setItem("defaultStart", defaultStart);
+}
+function setDefaultStart(end) {
+	defaultEnd = end.toString;
+	window.localStorage.setItem("defaultEnd", defaultEnd);
+}
+
 function swipeLeft(){
 	const currentCityIndex = cities.indexOf(currentCity);
 	currentCity = cities[(currentCityIndex - 1 + cities.length) % cities.length];
