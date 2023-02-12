@@ -5,6 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Should I Wear Shorts Today?</title>
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/pop.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/layer/layer.js"></script>
 </head>
 <body>
 <div id="navbar">
@@ -39,9 +45,42 @@
     	</div>
 	</div>
 </div>
+<div class="col-md-5  col-xs-5 leftpage">
+	<form id="weather">
+		<div class="">
+			<p>Today Weather</p>
+		</div>
+	</form>
+</div>
 <script src="js/storage.js"></script>
 <script src="js/slider.js"></script>
 <script src="js/weather.js"></script>
 <script src="js/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
+<script>
+	$('#weather').hide();
+	window.addEventListener("mousewheel", async function(event) {
+		let data = await getCurrentWeather(getCurrentCity())
+		console.log(data)
+		const weather = data[1]
+		const temperature = data[0]
+		$('#weather').append(weather)
+		$('#weather').append(temperature)
+		if (event.wheelDelta < 0) {
+			// Mouse scrolled down
+		} else {
+			// Mouse scrolled up
+			layer.open({
+				type: 1,
+				title: 'Weather Information',
+				skin: 'layui-layer-lan',
+				content: '<div style="padding: 20px;">' +
+						'<p><font color="#FF0000" size="6">' + weather + '</font></p>' +
+						'<p><font color="#0000FF" size="6">' + temperature + '°C</font></p>' +
+						'</div>'
+			});
+		}
+	});
+</script>
 </html>
