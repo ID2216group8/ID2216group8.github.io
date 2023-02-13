@@ -92,7 +92,6 @@ document.addEventListener("touchend", async function(e) {
                     '<p><font color="#0000FF" size="6">' + temperature + '°C</font></p>' +
                     '</div>'
             });
-            layer.onClose(console.log(1));
             break;
         case 2:
         	
