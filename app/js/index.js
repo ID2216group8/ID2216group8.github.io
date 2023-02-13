@@ -13,6 +13,7 @@ getValues();
 updateNavbar(cityName, cityIndicatior);
 clothingAlgorithm();
 
+
 //set hight of the slider with respect to sceen hight
 var sliderTopMargin = (window.innerHeight - 8 - 43 - 381 - (0.2 * window.innerWidth)-106)/2;
 slider.style.marginTop = sliderTopMargin.toString() + "px";
