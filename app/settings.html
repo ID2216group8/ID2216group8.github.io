@@ -10,6 +10,7 @@
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="/layer/layer.js"></script>
+	<script src="js/storage.js"></script>
 </head>
 <body>
 <div id="navbar">
@@ -26,10 +27,10 @@
 		<div class="">
 
 			<p>
-				Begin Time: <input type="text" placeholder="Input begin time(0-24)" />
+				Begin Time: <input type="text" id="input_start" oninput="updatestart()" placeholder="Input begin time(0-24)" />
 			</p>
 			<p>
-				End Time: <input type="text" placeholder="Input end time(0-24)" />
+				End Time: <input type="text" id="input_end" oninput="updateend()" placeholder="Input end time(0-24)" />
 			</p>
 			<p>
 				Set the display time period when the app is opened.
@@ -99,5 +100,18 @@
 	$("#save2").click(function() {
 		layer.closeAll();
 	})
+	function updatestart() {
+		// Get the input value
+		var inputValue = document.getElementById("input_start").value;
+		console.log(inputValue)
+		setDefaultStart(inputValue)
+
+	}
+	function updateend() {
+		// Get the input value
+		var inputValue2 = document.getElementById("input_end").value;
+		console.log(inputValue2)
+		setDefaultEnd(inputValue2)
+	}
 </script>
 </html>

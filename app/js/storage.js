@@ -138,11 +138,13 @@ function tempInFahrenheit(temp){
 }
 
 function setDefaultStart(start) {
-	defaultStart = start.toString;
+	defaultStart = start.toString();
+	console.log(typeof(defaultStart))
 	window.localStorage.setItem("defaultStart", defaultStart);
 }
 function setDefaultEnd(end) {
-	defaultEnd = end.toString;
+	defaultEnd = end.toString();
+	console.log(typeof(defaultEnd))
 	window.localStorage.setItem("defaultEnd", defaultEnd);
 }
 function setTempUnit(unit){
