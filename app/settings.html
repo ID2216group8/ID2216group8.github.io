@@ -19,7 +19,6 @@
 </div>
 <div id="dressedmannequin" class="list-group">
 	<button id="div_add_time" class="list-group-item"><font size="5">Default Time</font></button>
-	<button id="div_add_unit" class="list-group-item"><font size="5">Temperature Unit</font></button>
 </div>
 <div class="col-md-5  col-xs-5 leftpage">
 	<form id="adduse_time">
@@ -27,10 +26,10 @@
 		<div class="">
 
 			<p>
-				Begin Time: <input type="text" id="input_start" oninput="updatestart()" placeholder="Input begin time(0-24)" />
+				Begin Time: <input type="text" id="input_start" placeholder="Input begin time(0-24)" />
 			</p>
 			<p>
-				End Time: <input type="text" id="input_end" oninput="updateend()" placeholder="Input end time(0-24)" />
+				End Time: <input type="text" id="input_end" placeholder="Input end time(0-24)" />
 			</p>
 			<p>
 				Set the display time period when the app is opened.
@@ -77,41 +76,31 @@
 			content: $('#adduse_time')
 		});
 	})
+
+	function updatestart() {
+		// Get the input value
+		const inputValue = document.getElementById("input_start").value;
+		console.log(inputValue)
+
+	}
+	function updateend() {
+		// Get the input value
+		const inputValue2 = document.getElementById("input_end").value;
+		console.log(inputValue2)
+	}
 	$("#cancle").click(function() {
 		layer.closeAll();
 
 	})
 	$("#save").click(function() {
-		layer.closeAll();
-	})
-	$("#div_add_unit").click(function() {
-		layer.open({
-			type: 1,
-			title: 'Temperature Unit',
-			skin: 'layui-layer-lan',
-			closeBtn: 0,
-			content: $('#adduse_unit')
-		});
-	})
-	$("#cancle2").click(function() {
-		layer.closeAll();
 
-	})
-	$("#save2").click(function() {
-		layer.closeAll();
-	})
-	function updatestart() {
-		// Get the input value
-		var inputValue = document.getElementById("input_start").value;
+		const inputValue = document.getElementById("input_start").value;
 		console.log(inputValue)
-		setDefaultStart(inputValue)
-
-	}
-	function updateend() {
-		// Get the input value
-		var inputValue2 = document.getElementById("input_end").value;
+		const inputValue2 = document.getElementById("input_end").value;
 		console.log(inputValue2)
+		setDefaultStart(inputValue)
 		setDefaultEnd(inputValue2)
-	}
+		layer.closeAll();
+	})
 </script>
 </html>
