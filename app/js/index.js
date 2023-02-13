@@ -29,35 +29,34 @@ function getAngle(angx, angy) {
 function getDirection(startx, starty, endx, endy) {
     var angx = endx - startx;
     var angy = endy - starty;
-    var result = 0;
 
     //if swipe distance too short
     if (Math.abs(angx) < 2 && Math.abs(angy) < 2) {
-        return result;
+        return 0;
     }
     
     var angle = getAngle(angx, angy);
     if (angle >= -135 && angle <= -45) {
-        result = 1;
+        return 1;
     } else if (angle > 45 && angle < 135) {
-        result = 2;
+        return 2;
     } else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {
     	//not swipe left/right on slider
     	var rect = slider .getBoundingClientRect();
     	if(starty > rect.top && starty < rect.bottom){
-    		return result;
+    		return 0;
     	}
-        result = 3;
+        return 3;
     } else if (angle >= -45 && angle <= 45) {
     	//not swipe left/right on slider
     	var rect = slider .getBoundingClientRect();
     	if(starty > rect.top && starty < rect.bottom){
-    		return result;
+    		return 0;
     	}
-        result = 4;
+        return 4;
     }
     
-    return result;
+    return 0;
 }
 
 //finger touch screen
@@ -89,6 +88,7 @@ document.addEventListener("touchend", async function(e) {
                     '<p><font color="#0000FF" size="6">' + temperature + '°C</font></p>' +
                     '</div>'
             });
+            layer.onClose(console.log(1));
             break;
         case 2:
         	
