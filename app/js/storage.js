@@ -76,6 +76,8 @@ function setClothing(typeOfClothe, src){
 	if(typeOfClothe === "winterJacket")
 		typeOfClothe = "winter-jacket";
 	document.getElementById(typeOfClothe + "-img").src = src;
+	if(typeOfClothe === "winter-jacket")
+		typeOfClothe = "winterJacket";
 	clothing[typeOfClothe] = src;
 	window.localStorage.setItem("clothing", JSON.stringify(clothing));
 }
@@ -105,6 +107,7 @@ function getCold(){return cold;}
 function getComfortable(){return comfortable;}
 function getWarm(){return warm;}
 function getTempUnit(){return tempUnit;}
+function getClothing(){return clothing;}
 
 function addCity(cityName){
 	cities.push(cityName);

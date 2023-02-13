@@ -33,19 +33,12 @@
            <td rowspan="3"><div id="dressedmannequin">
     <img src="/res/mannequin.png"id="mannequin">
     <div id="hat"class="clothing"><img id="hat-img" src="/res/hat.png"></div>
-    <div id="hat2"class="clothing"><img id="hat2-img" src="/res/hat2.png"></div>
     <div id="hoodie"class="clothing"><img id="hoodie-img" src="/res/hoodie.png"></div>
-    <div id="hoodie2"class="clothing"><img id="hoodie2-img" src="/res/hoodie2.png"></div>
     <div id="scarf"class="clothing"><img id="scarf-img" src="/res/scarf.png"></div>
-    <div id="scarf2"class="clothing"><img id="scarf2-img" src="/res/scarf2.png"></div>
        <div id="trousers"class="clothing"><img id="trousers-img" src="/res/trousers.png"></div>
-       <div id="trousers2"class="clothing"><img id="trousers2-img" src="/res/trousers2.png"></div>
 <div  id="shorts"class="clothing"><img id="shorts-img" src="/res/shorts.png"></div>
-<div  id="shorts2"class="clothing"><img id="shorts2-img" src="/res/shorts2.png"></div>
     <div id="tshirt"class="clothing"><img id="tshirt-img" src="/res/tshirt.png"></div>
-    <div id="tshirt2"class="clothing"><img id="tshirt2-img" src="/res/tshirt2.png"></div>
     <div id="umbrella"class="clothing"><img id="umbrella-img" src="/res/umbrella.png"></div>
-    <div id="umbrella2"class="clothing"><img id="umbrella2-img" src="/res/umbrella2.png"></div>
     <div id="winter-jacket"class="clothing"><img id="winter-jacket-img" src="/res/winter-jacket.png"></div>
 </div></td>
            
@@ -109,7 +102,17 @@
             
         </tr>
         <tr>
-            <td></td>
+            <td><div class="col"style="text-align:center">
+      <div class="winter-jacket" style="margin: 0 auto;">
+  <img id="select-winter-jacket-img" src="/res/winter-jacket.png" style="height: 60px" >
+  <div class="card-body">
+    <h5 class="card-title">winter jacket</h5>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary" id="selectwinter-jacket">select</a>
+  </div>
+</div>
+    </div></td>
+    <td></td>
             <td><div class="col"style="text-align:center">
       <div class="umbrella" style="margin: 0 auto;">
   <img id="select-umbrella-img" src="/res/umbrella.png" style="height: 60px" >
@@ -120,6 +123,7 @@
   </div>
 </div>
     </div></td>
+
         </tr>
     </table>
     
@@ -127,8 +131,8 @@
     <form id="2hat">
 
         <div class="">
-           <img src="/res/hat.png" style="height: 80px" id="hatone">
-           <img src="/res/hat2.png" style="height: 80px" id="hattwo">
+           <img class="hat-select" src="/res/hat.png" style="height: 80px" id="hatone">
+           <img class="hat-select" src="/res/hat2.png" style="height: 80px" id="hattwo">
             
         </div>
 
@@ -138,8 +142,8 @@
     <form id="2scarf">
 
         <div class="">
-           <img src="/res/scarf.png" style="height: 80px" id="scarfone">
-           <img src="/res/scarf2.png" style="height: 80px" id="scarftwo">
+           <img class="scarf-select" src="/res/scarf.png" style="height: 80px" id="scarfone">
+           <img class="scarf-select" src="/res/scarf2.png" style="height: 80px" id="scarftwo">
             
         </div>
 
@@ -149,8 +153,8 @@
     <form id="2hoodie">
 
         <div class="">
-           <img src="/res/hoodie.png" style="height: 80px" id="hoodieone">
-           <img src="/res/hoodie2.png" style="height: 80px" id="hoodietwo">
+           <img class="hoodie-select" src="/res/hoodie.png" style="height: 80px" id="hoodieone">
+           <img class="hoodie-select" src="/res/hoodie2.png" style="height: 80px" id="hoodietwo">
             
         </div>
 
@@ -160,8 +164,8 @@
     <form id="2tshirt">
 
         <div class="">
-           <img src="/res/tshirt.png" style="height: 80px" id="tshirtone">
-           <img src="/res/tshirt2.png" style="height: 80px" id="tshirttwo">
+           <img class="tshirt-select" src="/res/tshirt.png" style="height: 80px" id="tshirtone">
+           <img class="tshirt-select" src="/res/tshirt2.png" style="height: 80px" id="tshirttwo">
             
         </div>
 
@@ -171,8 +175,8 @@
     <form id="2trousers">
 
         <div class="">
-           <img src="/res/trousers.png" style="height: 80px" id="trousersone">
-           <img src="/res/trousers2.png" style="height: 80px" id="trouserstwo">
+           <img class="trousers-select" src="/res/trousers.png" style="height: 80px" id="trousersone">
+           <img class="trousers-select" src="/res/trousers2.png" style="height: 80px" id="trouserstwo">
             
         </div>
 
@@ -182,8 +186,8 @@
     <form id="2shorts">
 
         <div class="">
-           <img src="/res/shorts.png" style="height: 80px" id="shortsone">
-           <img src="/res/shorts2.png" style="height: 80px" id="shortstwo">
+           <img class="shorts-select" src="/res/shorts.png" style="height: 80px" id="shortsone">
+           <img class="shorts-select" src="/res/shorts2.png" style="height: 80px" id="shortstwo">
             
         </div>
 
@@ -193,8 +197,19 @@
     <form id="2umbrella">
 
         <div class="">
-           <img src="/res/umbrella.png" style="height: 80px" id="umbrellaone">
-           <img src="/res/umbrella2.png" style="height: 80px" id="umbrellatwo">
+           <img class="umbrella-select" src="/res/umbrella.png" style="height: 80px" id="umbrellaone">
+           <img class="umbrella-select" src="/res/umbrella2.png" style="height: 80px" id="umbrellatwo">
+            
+        </div>
+
+    </form>
+</div>
+<div class="col-md-5  col-xs-5 leftpage">
+    <form id="2winter-jacket">
+
+        <div class="">
+           <img class="winter-jacket-select" src="/res/winter-jacket.png" style="height: 80px" id="winter-jacketone">
+           <img class="winter-jacket-select" src="/res/winter-jacket2.png" style="height: 80px" id="winter-jackettwo">
             
         </div>
 
@@ -209,14 +224,23 @@
 <script src="js/change-clothing.js"></script>
 </body>
 <script>
-    
+	getValues();
+	document.getElementById("select-hat-img").src = clothing['hat'];
+	document.getElementById("select-scarf-img").src = clothing['scarf'];
+	document.getElementById("select-tshirt-img").src = clothing['tshirt'];
+	document.getElementById("select-shorts-img").src = clothing['shorts'];
+	document.getElementById("select-hoodie-img").src = clothing['hoodie'];
+	document.getElementById("select-trousers-img").src = clothing['trousers'];
+	document.getElementById("select-winter-jacket-img").src = clothing['winterJacket'];
+	document.getElementById("select-umbrella-img").src = clothing['umbrella'];
     $('#2hat').hide();
     $('#2scarf').hide();
     $('#2hoodie').hide();
     $('#2tshirt').hide();
     $('#2trousers').hide();
     $('#2shorts').hide();
-    $('#22umbrella').hide();
+    $('#2umbrella').hide();
+    $('#2winter-jacket').hide();
 
     $('#selecthat').click(function(){
     layer.open({
@@ -225,16 +249,10 @@
             closeBtn: 0,
             content: $('#2hat')
         });})
-    $('#hattwo').click(function(){
-        hat.style.visibility = "hidden";
-        hat2.style.visibility = "visible";
-        document.getElementById("select-hat-img").src = "/res/hat2.png";
-        layer.closeAll();
-    })
-    $('#hatone').click(function(){
-        hat.style.visibility = "visible";
-        hat2.style.visibility = "hidden";
-        document.getElementById("select-hat-img").src = "/res/hat.png";
+    $('.hat-select').click(function(){
+        document.getElementById("hat-img").src = $(this).attr('src');
+        document.getElementById("select-hat-img").src = $(this).attr('src');
+        setClothing("hat",$(this).attr('src'));
         layer.closeAll();
     })
 
@@ -245,16 +263,10 @@
             closeBtn: 0,
             content: $('#2scarf')
         });})
-    $('#scarftwo').click(function(){
-        scarf.style.visibility = "hidden";
-        scarf2.style.visibility = "visible";
-        document.getElementById("select-scarf-img").src = "/res/scarf2.png";
-        layer.closeAll();
-    })
-    $('#scarfone').click(function(){
-        scarf.style.visibility = "visible";
-        scarf2.style.visibility = "hidden";
-        document.getElementById("select-scarf-img").src = "/res/scarf.png";
+    $('.scarf-select').click(function(){
+        document.getElementById("scarf-img").src = $(this).attr('src');
+        document.getElementById("select-scarf-img").src = $(this).attr('src');
+        setClothing("scarf",$(this).attr('src'));
         layer.closeAll();
     })
 
@@ -266,21 +278,29 @@ $('#selecttshirt').click(function(){
             content: $('#2tshirt')
         });})
 
-    $('#tshirttwo').click(function(){
-        tshirt.style.visibility = "hidden";
-        tshirt2.style.visibility = "visible";
+    $('.tshirt-select').click(function(){
         hoodie.style.visibility = "hidden";
-        hoodie2.style.visibility = "hidden";
-        document.getElementById("select-tshirt-img").src = "/res/tshirt2.png";
+        tshirt.style.visibility = "visible";
+        document.getElementById("winter-jacket").style.visibility = "hidden";
+        document.getElementById("tshirt-img").src = $(this).attr('src');
+        document.getElementById("select-tshirt-img").src = $(this).attr('src');
+        setClothing("tshirt",$(this).attr('src'));
         layer.closeAll();
     })
-
-    $('#tshirtone').click(function(){
-        tshirt2.style.visibility = "hidden";
-        tshirt.style.visibility = "visible";
+    $('#selectwinter-jacket').click(function(){
+    layer.open({
+            type: 1,
+            title: 'Choose a Winter Jacket',
+            closeBtn: 0,
+            content: $('#2winter-jacket')
+        });})
+    $('.winter-jacket-select').click(function(){
         hoodie.style.visibility = "hidden";
-        hoodie2.style.visibility = "hidden";
-        document.getElementById("select-tshirt-img").src = "/res/tshirt.png";
+        tshirt.style.visibility = "hidden";
+        document.getElementById("winter-jacket").style.visibility = "visible";
+        document.getElementById("winter-jacket-img").src = $(this).attr('src');
+        document.getElementById("select-winter-jacket-img").src = $(this).attr('src');
+        setClothing("winterJacket",$(this).attr('src'));
         layer.closeAll();
     })
 
@@ -292,21 +312,13 @@ $('#selecttshirt').click(function(){
             content: $('#2hoodie')
         });})
 
-    $('#hoodietwo').click(function(){
-        tshirt.style.visibility = "hidden";
-        tshirt2.style.visibility = "hidden";
-        hoodie.style.visibility = "hidden";
-        hoodie2.style.visibility = "visible";
-        document.getElementById("select-hoodie-img").src = "/res/hoodie2.png";
-        layer.closeAll();
-    })
-
-    $('#hoodieone').click(function(){
-        tshirt2.style.visibility = "hidden";
+    $('.hoodie-select').click(function(){
         tshirt.style.visibility = "hidden";
         hoodie.style.visibility = "visible";
-        hoodie2.style.visibility = "hidden";
-        document.getElementById("select-hoodie-img").src = "/res/hoodie.png";
+        document.getElementById("winter-jacket").style.visibility = "hidden";
+        document.getElementById("hoodie-img").src = $(this).attr('src');
+        document.getElementById("select-hoodie-img").src = $(this).attr('src');
+        setClothing("hoodie",$(this).attr('src'));
         layer.closeAll();
     })
 
@@ -318,21 +330,12 @@ $('#selecttshirt').click(function(){
             content: $('#2trousers')
         });})
 
-    $('#trouserstwo').click(function(){
-        trousers.style.visibility = "hidden";
-        trousers2.style.visibility = "visible";
-        shorts.style.visibility = "hidden";
-        shorts2.style.visibility = "hidden";
-        document.getElementById("select-trousers-img").src = "/res/trousers2.png";
-        layer.closeAll();
-    })
-
-    $('#trousersone').click(function(){
-        shorts2.style.visibility = "hidden";
+    $('.trousers-select').click(function(){
         shorts.style.visibility = "hidden";
         trousers.style.visibility = "visible";
-        trousers2.style.visibility = "hidden";
-        document.getElementById("select-trousers-img").src = "/res/trousers1.png";
+        document.getElementById("trousers-img").src = $(this).attr('src');
+        document.getElementById("select-trousers-img").src = $(this).attr('src');
+        setClothing("trousers",$(this).attr('src'));
         layer.closeAll();
     })
 
@@ -344,21 +347,12 @@ $('#selecttshirt').click(function(){
             content: $('#2shorts')
         });})
 
-    $('#shortstwo').click(function(){
+    $('.shorts-select').click(function(){
         trousers.style.visibility = "hidden";
-        trousers2.style.visibility = "hidden";
-        shorts.style.visibility = "hidden";
-        shorts2.style.visibility = "visible";
-        document.getElementById("select-shorts-img").src = "/res/shorts2.png";
-        layer.closeAll();
-    })
-
-    $('#shortsone').click(function(){
-        trousers.style.visibility = "hidden";
-        trousers2.style.visibility = "hidden";
         shorts.style.visibility = "visible";
-        shorts2.style.visibility = "hidden";
-        document.getElementById("select-shorts-img").src = "/res/shorts.png";
+        document.getElementById("shorts-img").src = $(this).attr('src');
+        document.getElementById("select-shorts-img").src = $(this).attr('src');
+        setClothing("shorts",$(this).attr('src'));
         layer.closeAll();
     })
 
@@ -369,16 +363,10 @@ $('#selecttshirt').click(function(){
             closeBtn: 0,
             content: $('#2umbrella')
         });})
-    $('#umbrellatwo').click(function(){
-        umbrella.style.visibility = "hidden";
-        umbrella2.style.visibility = "visible";
-        document.getElementById("select-umbrella-img").src = "/res/umbrella2.png";
-        layer.closeAll();
-    })
-    $('#umbrellaone').click(function(){
-        umbrella.style.visibility = "visible";
-        umbrella2.style.visibility = "hidden";
-        document.getElementById("select-umbrella-img").src = "/res/umbrella.png";
+    $('.umbrella-select').click(function(){
+        document.getElementById("umbrella-img").src = $(this).attr('src');
+        document.getElementById("select-umbrella-img").src = $(this).attr('src');
+        setClothing("umbrella",$(this).attr('src'));
         layer.closeAll();
     })
 
