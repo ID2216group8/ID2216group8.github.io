@@ -11,6 +11,9 @@ settings.addEventListener("click", function(){document.location.href = "settings
 
 getValues();
 updateNavbar(cityName, cityIndicatior);
+setDefault();
+fillSlider(fromSlider, toSlider, toSlider);
+setToggleAccessible(toSlider);
 clothingAlgorithm();
 
 

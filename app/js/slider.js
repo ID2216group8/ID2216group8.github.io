@@ -1,6 +1,6 @@
 function controlFromSlider(fromSlider, toSlider, timeStart, timeEnd) {
   const [from, to] = getParsed(fromSlider, toSlider);
-  fillSlider(fromSlider, toSlider, '#C6C6C6', '#25daa5', toSlider);
+  fillSlider(fromSlider, toSlider, toSlider);
   if (from > to) {
     fromSlider.value = to;
     changeTimeWindow(to, timeStart);
@@ -15,7 +15,7 @@ function controlFromSlider(fromSlider, toSlider, timeStart, timeEnd) {
 
 function controlToSlider(fromSlider, toSlider, timeStart, timeEnd) {
   const [from, to] = getParsed(fromSlider, toSlider);
-  fillSlider(fromSlider, toSlider, '#C6C6C6', '#25daa5', toSlider);
+  fillSlider(fromSlider, toSlider, toSlider);
   setToggleAccessible(toSlider);
   if (from <= to) {
     toSlider.value = to;
@@ -46,7 +46,9 @@ function getParsed(currentFrom, currentTo) {
   return [from, to];
 }
 
-function fillSlider(from, to, sliderColor, rangeColor, controlSlider) {
+function fillSlider(from, to, controlSlider) {
+    const sliderColor = '#C6C6C6';
+    const rangeColor = '#25daa5';
     const rangeDistance = to.max-to.min;
     const fromPosition = from.value - to.min;
     const toPosition = to.value - to.min;
@@ -72,9 +74,11 @@ function setToggleAccessible(currentTarget) {
 function getTimeEnd(){return timeEnd.value;}
 function getTimeStart(){return timeStart.value;}
 
-function setDefault(fromSlider, toSlider, timeStart, timeEnd) {
+function setDefault() {
   const start = parseInt(getDefaultStart());
   const end = parseInt(getDefaultEnd());
+  console.log(start);
+  console.log(end);
   fromSlider.value = start;
   toSlider.value = end;
   changeTimeWindow(start, timeStart);
@@ -85,9 +89,8 @@ const fromSlider = document.querySelector('#fromSlider');
 const toSlider = document.querySelector('#toSlider');
 const timeStart = document.querySelector('#time-start');
 const timeEnd = document.querySelector('#time-end');
-setDefault(fromSlider, toSlider, timeStart, timeEnd);
-fillSlider(fromSlider, toSlider, '#C6C6C6', '#25daa5', toSlider);
-setToggleAccessible(toSlider);
+
+
 
 fromSlider.oninput = () => controlFromSlider(fromSlider, toSlider, timeStart, timeEnd);
 toSlider.oninput = () => controlToSlider(fromSlider, toSlider, timeStart,timeEnd);
