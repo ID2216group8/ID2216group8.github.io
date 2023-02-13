@@ -41,14 +41,14 @@ function getDirection(startx, starty, endx, endy) {
     } else if (angle > 45 && angle < 135) {
         return 2;
     } else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {
-    	//not swipe left/right on slider
+    	//not swipe right on slider
     	var rect = slider .getBoundingClientRect();
     	if(starty > rect.top && starty < rect.bottom){
     		return 0;
     	}
         return 3;
     } else if (angle >= -45 && angle <= 45) {
-    	//not swipe left/right on slider
+    	//not swipe left on slider
     	var rect = slider .getBoundingClientRect();
     	if(starty > rect.top && starty < rect.bottom){
     		return 0;

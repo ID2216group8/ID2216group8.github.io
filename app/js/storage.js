@@ -19,6 +19,8 @@ var clothing ={
 }
 
 function getValues(){
+	if(window.localStorage.getItem("currentCity") == null)
+		window.localStorage.setItem("currentCity", currentCity);
 	if(window.localStorage.getItem("defaultStart") == null)
 		window.localStorage.setItem("defaultStart", defaultStart);
 	if(window.localStorage.getItem("defaultEnd") == null)
@@ -41,6 +43,7 @@ function getValues(){
 	defaultStart = window.localStorage.getItem("defaultStart");
 	defaultEnd = window.localStorage.getItem("defaultEnd");
 	cities = window.localStorage.getItem("cities").split(',');
+	currentCity = window.localStorage.getItem("currentCity");
 
 	freezing = window.localStorage.getItem("freezing");
 	cold = window.localStorage.getItem("cold");
@@ -86,6 +89,7 @@ function updateNavbar(cityName, dots){
 		}
 	}
 	dots.innerHTML = string;
+	window.localStorage.setItem("currentCity", currentCity);
 }
 function getCurrentCity(){return currentCity;}
 function getDefaultStart(){return defaultStart;}
@@ -137,7 +141,7 @@ function setDefaultStart(start) {
 	defaultStart = start.toString;
 	window.localStorage.setItem("defaultStart", defaultStart);
 }
-function setDefaultStart(end) {
+function setDefaultEnd(end) {
 	defaultEnd = end.toString;
 	window.localStorage.setItem("defaultEnd", defaultEnd);
 }
