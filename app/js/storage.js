@@ -43,7 +43,7 @@ function getValues(){
 	defaultStart = window.localStorage.getItem("defaultStart");
 	defaultEnd = window.localStorage.getItem("defaultEnd");
 	cities = window.localStorage.getItem("cities").split(',');
-	currentCity = window.localStorage.getItem("currentCity");
+	
 
 	freezing = window.localStorage.getItem("freezing");
 	cold = window.localStorage.getItem("cold");
@@ -54,8 +54,11 @@ function getValues(){
 
 	clothing = JSON.parse(window.localStorage.getItem("clothing"));
 	updateClothing();
-
-	currentCity = cities[0];
+	currentCity = window.localStorage.getItem("currentCity");
+	if(! cities.includes(currentCity)){
+		currentCity = cities[0];
+	}
+	
 }
 
 function updateClothing(){
@@ -77,6 +80,7 @@ function setClothing(typeOfClothe, src){
 	window.localStorage.setItem("clothing", JSON.stringify(clothing));
 }
 function updateNavbar(cityName, dots){
+	console.log(currentCity);
 	cityName.innerHTML = currentCity;
 	const currentCityIndex = cities.indexOf(currentCity);
 	var string = "";
@@ -89,7 +93,7 @@ function updateNavbar(cityName, dots){
 		}
 	}
 	dots.innerHTML = string;
-	window.localStorage.setItem("currentCity", currentCity);
+	
 }
 function getCurrentCity(){return currentCity;}
 function getDefaultStart(){return defaultStart;}
@@ -154,6 +158,7 @@ function swipeLeft(){
 	currentCity = cities[(currentCityIndex - 1 + cities.length) % cities.length];
 	updateNavbar(cityName, cityIndicatior);
 	clothingAlgorithm();
+	window.localStorage.setItem("currentCity", currentCity);
 	return currentCity;
 }
 function swipeRight(){
@@ -161,6 +166,7 @@ function swipeRight(){
 	currentCity = cities[(currentCityIndex + 1 + cities.length) % cities.length];
 	updateNavbar(cityName, cityIndicatior);
 	clothingAlgorithm();
+	window.localStorage.setItem("currentCity", currentCity);
 	return currentCity;
 }
 const cityName = document.querySelector('#city-name');
