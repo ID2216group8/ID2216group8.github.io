@@ -98,11 +98,11 @@ function wmoInterpreter(code){
 }
 
 async function getWeatherForecast(cityname) {
-	let locationResponse = await getLocationAPI(cityname); 
+	let locationResponse = await getLocationAPI(cityname);
 	const lat = locationResponse['results'][0]['latitude'];
-	const long = locationResponse['results'][0]['longitude'];
+	const long = locationResponse['results'][0]['longitude']
 	//get the apparent_temperature forecast inbetween the set time
-	let weatherResponse = await getWeatherAPI(lat, long);
+	let weatherResponse = await getWeatherAPI(lat, long);	
 	return weatherResponse;
 }
 async function clothingAlgorithm() {
@@ -121,6 +121,7 @@ async function clothingAlgorithm() {
 	else{setClothingToHot();}
 }
 async function getCurrentWeather(cityname){
+
 	let weatherResponse = await getWeatherForecast(cityname);
 	const temp = weatherResponse['current_weather']['temperature'];
 	const weatherCode = weatherResponse['current_weather']['weathercode'];
