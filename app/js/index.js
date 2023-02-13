@@ -23,6 +23,8 @@ function getAngle(angx, angy) {
     return Math.atan2(angy, angx) * 180 / Math.PI;
 };
 
+
+
 // 1up 2down 3left 4right 0click
 function getDirection(startx, starty, endx, endy) {
     var angx = endx - startx;
@@ -33,17 +35,28 @@ function getDirection(startx, starty, endx, endy) {
     if (Math.abs(angx) < 2 && Math.abs(angy) < 2) {
         return result;
     }
-
+    
     var angle = getAngle(angx, angy);
     if (angle >= -135 && angle <= -45) {
         result = 1;
     } else if (angle > 45 && angle < 135) {
         result = 2;
     } else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {
+    	//not swipe left/right on slider
+    	var rect = slider .getBoundingClientRect();
+    	if(starty > rect.top && starty < rect.bottom){
+    		return result;
+    	}
         result = 3;
     } else if (angle >= -45 && angle <= 45) {
+    	//not swipe left/right on slider
+    	var rect = slider .getBoundingClientRect();
+    	if(starty > rect.top && starty < rect.bottom){
+    		return result;
+    	}
         result = 4;
     }
+    
     return result;
 }
 
@@ -78,10 +91,13 @@ document.addEventListener("touchend", async function(e) {
             });
             break;
         case 2:
+        	
             break;
         case 3:
+        	swipeRight();
             break;
         case 4:
+        	swipeLeft();
             break;
         default:
             break;

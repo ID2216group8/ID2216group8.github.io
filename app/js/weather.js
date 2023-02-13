@@ -99,8 +99,8 @@ function wmoInterpreter(code){
 
 async function getWeatherForecast(cityname) {
 	let locationResponse = await getLocationAPI(cityname); 
-	const lat = locationResponse['results'][1]['latitude'];
-	const long = locationResponse['results'][1]['longitude'];
+	const lat = locationResponse['results'][0]['latitude'];
+	const long = locationResponse['results'][0]['longitude'];
 	//get the apparent_temperature forecast inbetween the set time
 	let weatherResponse = await getWeatherAPI(lat, long);
 	return weatherResponse;

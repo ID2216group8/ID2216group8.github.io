@@ -10,6 +10,7 @@ function controlFromSlider(fromSlider, toSlider, timeStart, timeEnd) {
     changeTimeWindow(from, timeStart);
     changeTimeWindow(to, timeEnd);
   }
+  clothingAlgorithm();
 }
 
 function controlToSlider(fromSlider, toSlider, timeStart, timeEnd) {
@@ -25,6 +26,7 @@ function controlToSlider(fromSlider, toSlider, timeStart, timeEnd) {
     changeTimeWindow(from, timeStart);
     changeTimeWindow(from, timeEnd);
   }
+  clothingAlgorithm();
 }
 function changeTimeWindow(value, container){
   if(value > 12){
