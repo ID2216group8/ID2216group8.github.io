@@ -82,7 +82,6 @@ function setClothing(typeOfClothe, src){
 	window.localStorage.setItem("clothing", JSON.stringify(clothing));
 }
 function updateNavbar(cityName, dots){
-	console.log(currentCity);
 	cityName.innerHTML = currentCity;
 	const currentCityIndex = cities.indexOf(currentCity);
 	var string = "";
