@@ -18,7 +18,10 @@ else{
 }
 addsign = !addsign;
 })
-
+var trashmargin = ((window.innerWidth - 30 - 30)/2);
+$('.container').css("width", 'auto');
+$('#trash').css('margin-right', "0px")
+$('#trash').css('margin-left', trashmargin.toString() + "px");
 window.onload = initialCity();
 // async function initialCity(){//
 // 	$("#showcity").empty();
