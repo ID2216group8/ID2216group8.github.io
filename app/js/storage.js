@@ -109,9 +109,15 @@ function getTempUnit(){return tempUnit;}
 function getClothing(){return clothing;}
 
 function addCity(cityName){
-	cities.push(cityName);
-	window.localStorage.setItem("cities", cities.toString());
-	updateNavbar(cityName, cityIndicatior);
+	// cities.push(cityName);
+	if(window.localStorage.getItem("cities")!=null){
+		var origincities = window.localStorage.getItem("cities").split(",");
+	}
+	else {
+		var origincities = null;
+	}
+	origincities.push(cityName);
+	window.localStorage.setItem("cities", origincities.toString());
 }
 function deleteCity(cityName){
 	const index = cities.indexOf(cityName);
