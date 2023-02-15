@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Should I Wear Shorts Today?</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style2.css">
+    <link rel="stylesheet" type="text/css" href="/css/pop.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/layer/layer.js"></script>
+</head>
+<body>
+<div >
+	<img  src="/res/close.png"  id="close" height="28px">
+</div>
+
+
+
+<table style="width:100%;table-layout:fixed;" class="table table-borderless">
+       <tr>
+           <td ><div class="col" style="text-align:center">
+      <div class="hat" style="margin: 0 auto;">
+  <img id="select-hat-img" src="/res/hat.png" style="height: 60px"  >
+  <div class="card-body">
+    <h5 class="card-title">hat</h5>
+    <a href="#" class="btn btn-primary" id="selecthat">select</a>
+  </div>
+</div>
+    </div></td>
+           <td rowspan="3"><div id="dressedmannequin">
+    <img src="/res/mannequin.png"id="mannequin">
+    <div id="hat"class="clothing"><img id="hat-img" src="/res/hat.png"></div>
+    <div id="hoodie"class="clothing"><img id="hoodie-img" src="/res/hoodie.png"></div>
+    <div id="scarf"class="clothing"><img id="scarf-img" src="/res/scarf.png"></div>
+       <div id="trousers"class="clothing"><img id="trousers-img" src="/res/trousers.png"></div>
+<div  id="shorts"class="clothing"><img id="shorts-img" src="/res/shorts.png"></div>
+    <div id="tshirt"class="clothing"><img id="tshirt-img" src="/res/tshirt.png"></div>
+    <div id="umbrella"class="clothing"><img id="umbrella-img" src="/res/umbrella.png"></div>
+    <div id="winter-jacket"class="clothing"><img id="winter-jacket-img" src="/res/winter-jacket.png"></div>
+</div></td>
+           
+           <td>
+           	<div class="col" style="text-align:center">
+      <div class="scarf" style="width: 4rem;margin: 0 auto;">
+  <img id="select-scarf-img" src="/res/scarf.png" style="height: 60px" >
+  <div class="card-body">
+    <h5 class="card-title">scarf</h5>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary" id="selectscarf">select</a>
+  </div>
+</div>
+    </div></td>
+        </tr>
+        <tr>
+            <td><div class="col" style="text-align:center">
+      <div class="T-shirts" style="margin: 0 auto;">
+  <img id="select-tshirt-img" src="/res/tshirt.png" style="height: 60px">
+  <div class="card-body">
+    <h5 class="card-title">T-shirt</h5>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary" id="selecttshirt">select</a>
+  </div>
+</div>
+    </div></td>
+            <td><div class="col"style="text-align:center">
+      <div class="shorts" style="width: 4rem;margin: 0 auto;">
+  <img id="select-shorts-img" src="/res/shorts.png" style="height: 60px" >
+  <div class="card-body">
+    <h5 class="card-title">shorts</h5>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary" id="selectshorts">select</a>
+  </div>
+</div>
+    </div></td>
+            
+        </tr>
+        <tr>
+            <td><div class="col"style="text-align:center">
+      <div class="hoodie" style="margin: 0 auto;">
+  <img id="select-hoodie-img" src="/res/hoodie.png" style="height: 60px" >
+  <div class="card-body">
+    <h5 class="card-title">hoodie</h5>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary" id="selecthoodie">select</a>
+  </div>
+</div>
+    </div></td>
+            
+            <td><div class="col"style="text-align:center">
+      <div class="trousers" style="width: 4rem;margin: 0 auto;">
+  <img id="select-trousers-img" src="/res/trousers.png" style="height: 60px" >
+  <div class="card-body">
+    <h5 class="card-title">trousers</h5>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary" id="selecttrousers">select</a>
+  </div>
+</div>
+    </div></td>
+            
+        </tr>
+        <tr>
+            <td><div class="col"style="text-align:center">
+      <div class="winter-jacket" style="margin: 0 auto;">
+  <img id="select-winter-jacket-img" src="/res/winter-jacket.png" style="height: 60px" >
+  <div class="card-body">
+    <h5 class="card-title">winter jacket</h5>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary" id="selectwinter-jacket">select</a>
+  </div>
+</div>
+    </div></td>
+    <td></td>
+            <td><div class="col"style="text-align:center">
+      <div class="umbrella" style="margin: 0 auto;">
+  <img id="select-umbrella-img" src="/res/umbrella.png" style="height: 60px" >
+  <div class="card-body">
+    <h5 class="card-title">umbrella</h5>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary" id="selectumbrella">select</a>
+  </div>
+</div>
+    </div></td>
+
+        </tr>
+    </table>
+    
+    <div class="col-md-5  col-xs-5 leftpage">
+    <form id="2hat">
+
+        <div class="">
+           <img class="hat-select" src="/res/hat.png" style="height: 80px" id="hatone">
+           <img class="hat-select" src="/res/hat2.png" style="height: 80px" id="hattwo">
+            
+        </div>
+
+    </form>
+</div>
+<div class="col-md-5  col-xs-5 leftpage">
+    <form id="2scarf">
+
+        <div class="">
+           <img class="scarf-select" src="/res/scarf.png" style="height: 80px" id="scarfone">
+           <img class="scarf-select" src="/res/scarf2.png" style="height: 80px" id="scarftwo">
+            
+        </div>
+
+    </form>
+</div>
+<div class="col-md-5  col-xs-5 leftpage">
+    <form id="2hoodie">
+
+        <div class="">
+           <img class="hoodie-select" src="/res/hoodie.png" style="height: 80px" id="hoodieone">
+           <img class="hoodie-select" src="/res/hoodie2.png" style="height: 80px" id="hoodietwo">
+            
+        </div>
+
+    </form>
+</div>
+<div class="col-md-5  col-xs-5 leftpage">
+    <form id="2tshirt">
+
+        <div class="">
+           <img class="tshirt-select" src="/res/tshirt.png" style="height: 80px" id="tshirtone">
+           <img class="tshirt-select" src="/res/tshirt2.png" style="height: 80px" id="tshirttwo">
+            
+        </div>
+
+    </form>
+</div>
+<div class="col-md-5  col-xs-5 leftpage">
+    <form id="2trousers">
+
+        <div class="">
+           <img class="trousers-select" src="/res/trousers.png" style="height: 80px" id="trousersone">
+           <img class="trousers-select" src="/res/trousers2.png" style="height: 80px" id="trouserstwo">
+            
+        </div>
+
+    </form>
+</div>
+<div class="col-md-5  col-xs-5 leftpage">
+    <form id="2shorts">
+
+        <div class="">
+           <img class="shorts-select" src="/res/shorts.png" style="height: 80px" id="shortsone">
+           <img class="shorts-select" src="/res/shorts2.png" style="height: 80px" id="shortstwo">
+            
+        </div>
+
+    </form>
+</div>
+<div class="col-md-5  col-xs-5 leftpage">
+    <form id="2umbrella">
+
+        <div class="">
+           <img class="umbrella-select" src="/res/umbrella.png" style="height: 80px" id="umbrellaone">
+           <img class="umbrella-select" src="/res/umbrella2.png" style="height: 80px" id="umbrellatwo">
+            
+        </div>
+
+    </form>
+</div>
+<div class="col-md-5  col-xs-5 leftpage">
+    <form id="2winter-jacket">
+
+        <div class="">
+           <img class="winter-jacket-select" src="/res/winter-jacket.png" style="height: 80px" id="winter-jacketone">
+           <img class="winter-jacket-select" src="/res/winter-jacket2.png" style="height: 80px" id="winter-jackettwo">
+            
+        </div>
+
+    </form>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="js/storage.js"></script>
+
+<script src="js/weather.js"></script>
+<script src="js/change-clothing.js"></script>
+</body>
+<script>
+	getValues();
+	document.getElementById("select-hat-img").src = clothing['hat'];
+	document.getElementById("select-scarf-img").src = clothing['scarf'];
+	document.getElementById("select-tshirt-img").src = clothing['tshirt'];
+	document.getElementById("select-shorts-img").src = clothing['shorts'];
+	document.getElementById("select-hoodie-img").src = clothing['hoodie'];
+	document.getElementById("select-trousers-img").src = clothing['trousers'];
+	document.getElementById("select-winter-jacket-img").src = clothing['winterJacket'];
+	document.getElementById("select-umbrella-img").src = clothing['umbrella'];
+    $('#2hat').hide();
+    $('#2scarf').hide();
+    $('#2hoodie').hide();
+    $('#2tshirt').hide();
+    $('#2trousers').hide();
+    $('#2shorts').hide();
+    $('#2umbrella').hide();
+    $('#2winter-jacket').hide();
+
+    $('#selecthat').click(function(){
+    layer.open({
+            type: 1,
+            title: 'Choose a hat',
+            closeBtn: 0,
+            content: $('#2hat')
+        });})
+    $('.hat-select').click(function(){
+        document.getElementById("hat-img").src = $(this).attr('src');
+        document.getElementById("select-hat-img").src = $(this).attr('src');
+        setClothing("hat",$(this).attr('src'));
+        layer.closeAll();
+    })
+
+    $('#selectscarf').click(function(){
+    layer.open({
+            type: 1,
+            title: 'Choose a scarf',
+            closeBtn: 0,
+            content: $('#2scarf')
+        });})
+    $('.scarf-select').click(function(){
+        document.getElementById("scarf-img").src = $(this).attr('src');
+        document.getElementById("select-scarf-img").src = $(this).attr('src');
+        setClothing("scarf",$(this).attr('src'));
+        layer.closeAll();
+    })
+
+$('#selecttshirt').click(function(){
+    layer.open({
+            type: 1,
+            title: 'Choose a T-shirt',
+            closeBtn: 0,
+            content: $('#2tshirt')
+        });})
+
+    $('.tshirt-select').click(function(){
+        hoodie.style.visibility = "hidden";
+        tshirt.style.visibility = "visible";
+        document.getElementById("winter-jacket").style.visibility = "hidden";
+        document.getElementById("tshirt-img").src = $(this).attr('src');
+        document.getElementById("select-tshirt-img").src = $(this).attr('src');
+        setClothing("tshirt",$(this).attr('src'));
+        layer.closeAll();
+    })
+    $('#selectwinter-jacket').click(function(){
+    layer.open({
+            type: 1,
+            title: 'Choose a Winter Jacket',
+            closeBtn: 0,
+            content: $('#2winter-jacket')
+        });})
+    $('.winter-jacket-select').click(function(){
+        hoodie.style.visibility = "hidden";
+        tshirt.style.visibility = "hidden";
+        document.getElementById("winter-jacket").style.visibility = "visible";
+        document.getElementById("winter-jacket-img").src = $(this).attr('src');
+        document.getElementById("select-winter-jacket-img").src = $(this).attr('src');
+        setClothing("winterJacket",$(this).attr('src'));
+        layer.closeAll();
+    })
+
+    $('#selecthoodie').click(function(){
+    layer.open({
+            type: 1,
+            title: 'Choose a hoodie',
+            closeBtn: 0,
+            content: $('#2hoodie')
+        });})
+
+    $('.hoodie-select').click(function(){
+        tshirt.style.visibility = "hidden";
+        hoodie.style.visibility = "visible";
+        document.getElementById("winter-jacket").style.visibility = "hidden";
+        document.getElementById("hoodie-img").src = $(this).attr('src');
+        document.getElementById("select-hoodie-img").src = $(this).attr('src');
+        setClothing("hoodie",$(this).attr('src'));
+        layer.closeAll();
+    })
+
+    $('#selecttrousers').click(function(){
+    layer.open({
+            type: 1,
+            title: 'Choose trousers',
+            closeBtn: 0,
+            content: $('#2trousers')
+        });})
+
+    $('.trousers-select').click(function(){
+        shorts.style.visibility = "hidden";
+        trousers.style.visibility = "visible";
+        document.getElementById("trousers-img").src = $(this).attr('src');
+        document.getElementById("select-trousers-img").src = $(this).attr('src');
+        setClothing("trousers",$(this).attr('src'));
+        layer.closeAll();
+    })
+
+    $('#selectshorts').click(function(){
+    layer.open({
+            type: 1,
+            title: 'Choose shorts',
+            closeBtn: 0,
+            content: $('#2shorts')
+        });})
+
+    $('.shorts-select').click(function(){
+        trousers.style.visibility = "hidden";
+        shorts.style.visibility = "visible";
+        document.getElementById("shorts-img").src = $(this).attr('src');
+        document.getElementById("select-shorts-img").src = $(this).attr('src');
+        setClothing("shorts",$(this).attr('src'));
+        layer.closeAll();
+    })
+
+    $('#selectumbrella').click(function(){
+    layer.open({
+            type: 1,
+            title: 'Choose an umbrella',
+            closeBtn: 0,
+            content: $('#2umbrella')
+        });})
+    $('.umbrella-select').click(function(){
+        document.getElementById("umbrella-img").src = $(this).attr('src');
+        document.getElementById("select-umbrella-img").src = $(this).attr('src');
+        setClothing("umbrella",$(this).attr('src'));
+        layer.closeAll();
+    })
+
+
+
+</script>
+
+</html>

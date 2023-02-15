@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Should I Wear Shorts Today?</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/pop.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/layer/layer.js"></script>
+	<script src="js/storage.js"></script>
+</head>
+<body>
+<div id="navbar">
+	<img  src="/res/close.png" alt="+" id="close" class="navbar-left">
+	<div id="city-name"><font size="5">Settings</font></div>
+</div>
+<div id="dressedmannequin" class="list-group">
+	<button id="div_add_time" class="list-group-item"><font size="5">Default Time</font></button>
+</div>
+<div class="col-md-5  col-xs-5 leftpage">
+	<form id="adduse_time">
+
+		<div class="">
+
+			<p>
+				Begin Time: <input type="text" id="input_start" placeholder="Input begin time(0-24)" />
+			</p>
+			<p>
+				End Time: <input type="text" id="input_end" placeholder="Input end time(0-24)" />
+			</p>
+			<p>
+				Set the display time period when the app is opened.
+			</p>
+
+			<input type="button" value="cancel" id="cancle" /> <input type="button" value="OK" id="save" />
+		</div>
+
+	</form>
+</div>
+
+<div class="col-md-5  col-xs-5 leftpage">
+	<form id="adduse_unit">
+		<div class="">
+
+			<p>Select Temperature Unit</p>
+			<p>
+				<input type="radio" />F(Fahrenheit)
+			</p>
+			<p>
+				<input type="radio" />C(Celsius)
+			</p>
+			<p>
+				<input type="radio" />K(Kelvin temperature)
+			</p>
+
+			<input type="button" value="cancel" id="cancle2" /> <input type="button" value="OK" id="save2" />
+		</div>
+	</form>
+</div>
+</body>
+
+<script>
+	$('#adduse_time').hide();
+	$('#adduse_unit').hide();
+	const close = document.querySelector('#close')
+	close.addEventListener("click", function(){document.location.href = "index.html";})
+	$("#div_add_time").click(function() {
+		layer.open({
+			type: 1,
+			title: 'Default Time Setting',
+			skin: 'layui-layer-lan',
+			closeBtn: 0,
+			content: $('#adduse_time')
+		});
+	})
+
+	function updatestart() {
+		// Get the input value
+		const inputValue = document.getElementById("input_start").value;
+		console.log(inputValue)
+
+	}
+	function updateend() {
+		// Get the input value
+		const inputValue2 = document.getElementById("input_end").value;
+		console.log(inputValue2)
+	}
+	$("#cancle").click(function() {
+		layer.closeAll();
+
+	})
+	$("#save").click(function() {
+
+		const inputValue = document.getElementById("input_start").value;
+		console.log(inputValue)
+		const inputValue2 = document.getElementById("input_end").value;
+		console.log(inputValue2)
+		setDefaultStart(inputValue)
+		setDefaultEnd(inputValue2)
+		layer.closeAll();
+	})
+</script>
+</html>
