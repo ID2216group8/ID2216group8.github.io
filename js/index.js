@@ -96,7 +96,6 @@ document.addEventListener("touchend", async function(e) {
             break;
         case 1:
             let data = await getCurrentWeather(getCurrentCity())
-            console.log(data)
             const weather = data[1]
             const temperature = data[0]
             layer.open({
