@@ -77,8 +77,6 @@ function getTimeStart(){return timeStart.value;}
 function setDefault() {
   const start = parseInt(getDefaultStart());
   const end = parseInt(getDefaultEnd());
-  console.log(start);
-  console.log(end);
   fromSlider.value = start;
   toSlider.value = end;
   changeTimeWindow(start, timeStart);
