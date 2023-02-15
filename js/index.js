@@ -1,7 +1,7 @@
 // navigation
 
 const plus = document.querySelector('#plus');
-const mannequin = document.querySelector('#mannequin');
+const mannequin = document.querySelector('#dressedmannequin');
 const settings = document.querySelector('#settings-dots');
 const slider = document.querySelector('#slider');
 
