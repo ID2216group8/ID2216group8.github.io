@@ -4,10 +4,24 @@ const plus = document.querySelector('#plus');
 const mannequin = document.querySelector('#dressedmannequin');
 const settings = document.querySelector('#settings-dots');
 const slider = document.querySelector('#slider');
+const thermometer = document.querySelector('#bottomnav');
 
 plus.addEventListener("click", function(){document.location.href = "change-cities.html";})
 mannequin.addEventListener("click", function(){document.location.href = "change-clothing.html";})
 settings.addEventListener("click", function(){document.location.href = "settings.html";})
+thermometer.addEventListener("click", async function(){
+            let data = await getCurrentWeather(getCurrentCity())
+            const weather = data[1]
+            const temperature = data[0]
+            layer.open({
+                type: 1,
+                title: 'Weather Information',
+                skin: 'layui-layer-lan',
+                content: '<div style="padding: 20px;">' +
+                    '<p><font color="#FF0000" size="6">' + weather + '</font></p>' +
+                    '<p><font color="#0000FF" size="6">' + temperature + '°C</font></p>' +
+                    '</div>'
+            });})
 
 getValues();
 updateNavbar(cityName, cityIndicatior);
@@ -20,6 +34,8 @@ clothingAlgorithm();
 //set hight of the slider with respect to sceen hight
 var sliderTopMargin = (window.innerHeight - 8 - 43 - 381 - (0.2 * window.innerWidth)-106)/2;
 slider.style.marginTop = sliderTopMargin.toString() + "px";
+var thermometerLeftMargin = (window.innerWidth - 70)/2;
+thermometer.style.marginLeft = thermometerLeftMargin.toString() + "px";
 
 var startx, starty;
 //get angle
