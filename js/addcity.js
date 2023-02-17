@@ -14,11 +14,12 @@ async function getfeedbackdata(city){
 	let weather = await getCurrentWeather(city);
 	console.log(city);
 	alert("Add successfully");
+	addCity(city);
 	}
 	catch(e){
     alert("No such city, please try again");
  	}
-    addCity(city);
+    
 	document.location.href = "change-cities.html";
 	 // document.location.reload("change-cities.html");
 }

@@ -5,6 +5,7 @@ const trousers = document.querySelector('#trousers');
 const hoodie = document.querySelector('#hoodie');
 const tShirt = document.querySelector('#tshirt');
 const shorts = document.querySelector('#shorts');
+const umbrella = document.querySelector('#umbrella');
 
 function setClothingToInvisible(){
 	hat.style.visibility = "hidden";
@@ -42,10 +43,15 @@ function setClothingToHot(){
 	tShirt.style.visibility = "visible";
 	shorts.style.visibility = "visible";
 }
-
+function setUmbrella(visible){
+	if(visible)
+		umbrella.style.visibility =  "visible";
+	else
+		umbrella.style.visibility =  "hidden";
+}
 
 async function getWeatherAPI(lat, long) {
-	var url = "https://api.open-meteo.com/v1/forecast?latitude=$LAT&longitude=$LONG&hourly=apparent_temperature&current_weather=true";
+	var url = "https://api.open-meteo.com/v1/forecast?latitude=$LAT&longitude=$LONG&hourly=apparent_temperature,precipitation&current_weather=true";
 	url = url.replace("$LAT", lat);
 	url = url.replace("$LONG", long);
 	let response = await fetch(url, {
@@ -182,15 +188,24 @@ async function clothingAlgorithm() {
 	const start = getTimeStart();
 	const end = getTimeEnd();
 	var temperatures = [end-start];
+	var precipitation = [end - start];
 	for(let i = start; i <= end; i++){
 		temperatures[i-start] = weatherResponse['hourly']['apparent_temperature'][i];
+		precipitation[i-start] = weatherResponse['hourly']['precipitation'][i];
 	}
 	const minTemp = Math.min(...temperatures);
+	const maxPre = Math.max(...precipitation);
 	if (minTemp < getFreezing()){setClothingToFreezing();}
 	else if (minTemp < getCold()){setClothingToCold();}
 	else if (minTemp < getComfortable()){setClothingToComfortable();}
 	else if (minTemp < getWarm()){setClothingToWarm();}
 	else{setClothingToHot();}
+	if(maxPre > 0){
+		setUmbrella(true);
+	}
+	else{
+		setUmbrella(false);
+	}
 }
 async function getCurrentWeather(cityname){
 
