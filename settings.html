@@ -98,8 +98,10 @@
 		console.log(inputValue)
 		const inputValue2 = document.getElementById("input_end").value;
 		console.log(inputValue2)
-		setDefaultStart(inputValue)
-		setDefaultEnd(inputValue2)
+		if(inputValue >= 0 && inputValue2 <= 24 && inputValue < inputValue2){
+			setDefaultStart(inputValue)
+			setDefaultEnd(inputValue2)
+		}
 		layer.closeAll();
 	})
 </script>
